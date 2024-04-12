@@ -26,20 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="https://tikam.com.np/assets/css/style.css" rel="stylesheet">
-
-  <script>
-        // Function to include a layout using JavaScript
-        function includeLayout(url,layout) {
-            fetch(url)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById(layout).innerHTML = html;
-                })
-                .catch(error => console.error('Error fetching layout:', error));
-        }
-
-        includeLayout('https://tikam.com.np/docs/sidebar.html','sidebarContainer');
-    </script>
+  
 </head>
 
 <body>
@@ -113,6 +100,10 @@
 
   <!-- Template Main JS File -->
   <script src="https://tikam.com.np/assets/js/main.js"></script>
+
+  <script>
+        includeLayout('https://tikam.com.np/docs/sidebar.html','sidebarContainer');
+    </script>
 
 </body>
 
