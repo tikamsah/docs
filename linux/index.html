@@ -35,31 +35,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="/assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Tikam Sah</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/tikamshah" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com/tikamshaha" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/tikamshah/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/tikamsah/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          li><a href="/" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="/docs/magento2" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Magento 2</span></a></li>
-          <li><a href="/docs/laravel" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Laravel</span></a></li>
-          <li><a href="/docs/php-mysql" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>PHP/MYSQL</span></a></li>
-          <li><a href="/docs/mysql" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>MySql</span></a></li>
-          <li><a href="/docs/linux" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Linux</span></a></li>
-          <li><a href="/docs/git" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Git</span></a></li>
-          <li><a href="/docs/docker" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Docker</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+     <div class="d-flex flex-column" id = "sidebarContainer">
     </div>
   </header><!-- End Header -->
 
@@ -143,6 +119,9 @@
 
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
+  <script>
+     includeLayout('https://tikam.com.np/docs/sidebar.html','sidebarContainer');
+  </script>
 
 </body>
 
