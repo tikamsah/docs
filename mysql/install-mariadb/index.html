@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tikam sah -MySql Documentation </title>
+  <title>Tikam sah - Installing mariabd in ubuntu server </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,10 +46,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>MySql Documentation</h2>
+          <h2>MariaDb installation</h2>
           <ol>
-            <li><a href="index.html">Home</a></li> <li><a href="/docs/">Documentation</a></li>
-            <li>MySql Documentation</li>
+            <li><a href="/">Home</a></li> <li><a href="/docs/">Documentation</a></li>
+            <li>Mysql</li>
           </ol>
         </div>
 
@@ -58,8 +58,55 @@
 
     <section class="inner-page">
       <div class="container">
-        <p> <a href="/docs/mysql/install-mariadb/">1. Install MySql / Mariadb server </a><p>
-         <p> <a href="/docs/mysql/create-user/">2. Creating mysql users and its operation  </a><p>
+        <p> <a href="#">Installing MariaDb on ubuntu</a></p>
+
+         <p class="code"> sudo apt update </p>
+         <p class="code"> sudo apt install mariadb-server mariadb-client -y </p>
+         <p class="code"> sudo systemctl start mariadb
+                          sudo systemctl enable mariadb
+                          sudo systemctl status mariadb 
+                        </p>
+
+          <p class="code"> sudo mysql_secure_installation </p>
+            <p> in case of error mysql_secure_installation:<p>  
+              <p class="code"> 
+
+                                  -- Set root password
+                  ALTER USER 'root'@'localhost' IDENTIFIED BY 'your_secure_password';
+
+                  -- Remove anonymous users
+                  DELETE FROM mysql.user WHERE User='';
+
+                  -- Disallow remote root login
+                  DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost');
+
+                  -- Remove test database
+                  DROP DATABASE IF EXISTS test;
+
+                  -- Reload privilege tables
+                  FLUSH PRIVILEGES;
+                  EXIT;
+
+
+               </p>
+
+
+
+<p>In /etc/mysql/mariadb.conf.d/50-server.cnf (Ubuntu/Debian) or /etc/my.cnf (CentOS):</p>
+
+  <p class="code"> 
+      [mysqld]
+      bind-address = 0.0.0.0
+   </p>
+
+    <p class="code"> sudo mysql -u root -p </p>
+    <p class="code"> CREATE DATABASE database_name; </p>
+    <p class="code"> CREATE USER 'username'@'host' IDENTIFIED BY 'password';</p>
+    <p class="code">GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'host';</p>
+    <p class="code">FLUSH PRIVILEGES;</p>
+    <p class="code">SHOW GRANTS FOR 'username'@'host';</p>
+
+          
       </div>
     </section>
 

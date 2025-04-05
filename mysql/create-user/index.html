@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tikam sah -MySql Documentation </title>
+  <title>Tikam sah - Creating user in MariaDb </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,10 +46,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>MySql Documentation</h2>
+          <h2>Creating User in Mariadb</h2>
           <ol>
-            <li><a href="index.html">Home</a></li> <li><a href="/docs/">Documentation</a></li>
-            <li>MySql Documentation</li>
+            <li><a href="/">Home</a></li> <li><a href="/docs/">Documentation</a></li>
+            <li>Mariadb</li>
           </ol>
         </div>
 
@@ -58,8 +58,23 @@
 
     <section class="inner-page">
       <div class="container">
-        <p> <a href="/docs/mysql/install-mariadb/">1. Install MySql / Mariadb server </a><p>
-         <p> <a href="/docs/mysql/create-user/">2. Creating mysql users and its operation  </a><p>
+        <p> <a href="#">User Operation for maria db</a><p>
+
+         <p class="code">CREATE USER 'user'@'%' IDENTIFIED BY 'your_password';<p>  
+         <p class="code">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;<p>  
+         <p class="code">GRANT ALL PRIVILEGES ON databas.tabele TO 'user'@'%';<p>  
+         <p class="code">GRANT SELECT, INSERT, UPDATE ON database_name.table_name TO 'username'@'host';<p>  
+         <p >In /etc/mysql/mariadb.conf.d/50-server.cnf (Ubuntu/Debian) or /etc/my.cnf (CentOS):<p>  
+         <p class="code">[mysqld]
+                    bind-address = 0.0.0.0<p>  
+        
+          <p class="code">mysql -u user -p -h host -P 3306 database_name<p>  
+          <p class="code">SELECT User, Host FROM mysql.user;<p>  
+          <p class="code">DROP USER 'username'@'host';<p>  
+          <p class="code">ALTER USER 'user'@'%' IDENTIFIED BY 'your_password';<p>  
+          <p class="code">FLUSH PRIVILEGES;<p>  
+          <p class="code">sudo systemctl restart mariadb<p>  
+          
       </div>
     </section>
 
